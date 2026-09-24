@@ -101,15 +101,14 @@ def example(this: int, that: int):
   number2 = answer + 10
   return answer
   
-print("Number 1:",number1)
-print("Number 2:",number2)  
+print("Number 1:", number1)
+print("Number 2:", number2)  
 
 number1 = example(10, 20)
 
 print("")
-print("New Number 1:",number1)
-print("New Number 2:",number2)
-
+print("New Number 1:", number1)
+print("New Number 2:", number2)
 """
 ============================================
 A MISTAKE I MADE (or one I want to avoid)
@@ -117,7 +116,18 @@ A MISTAKE I MADE (or one I want to avoid)
 [what's something confusing or easy to get wrong
 about this topic?]
 
+Besides Classes, the parameters and return were
+the least straightforward. Though that is honestly
+due to how flexible they are in functions.
 
+The only way to learn how they worked exactly
+was from doing, trying them out multiple times
+until I saw what they did. And from there, they
+became the tools I used the most during
+functions.
+All I needed was to remember is that parameters
+are a template, and that return gives you
+a value to use.
 ============================================
 HOW THIS CONNECTS TO SOMETHING ELSE
 ============================================
