@@ -91,7 +91,24 @@ MY OWN EXAMPLE(S)
 Write at least one working example below that you
 came up with yourself — not copied from class.
 """
-def 
+number1 = 0
+number2 = 0
+
+def example(this: int, that: int):
+  global number2
+  answer = this + that
+  
+  number2 = answer + 10
+  return answer
+  
+print("Number 1:",number1)
+print("Number 2:",number2)  
+
+number1 = example(10, 20)
+
+print("")
+print("New Number 1:",number1)
+print("New Number 2:",number2)
 
 """
 ============================================
