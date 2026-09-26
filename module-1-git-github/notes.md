@@ -1,13 +1,22 @@
 # Module 1 — Git & GitHub
 
-**Student:** [your name]
-**Date:** [date]
+**Student:** Manarang, Marius L.
+**Date:** 9/25/26
 
 ---
 
 ## What is Git? What is GitHub? (explain like you're teaching a friend who's never used either)
 
 [Write your own explanation here. What problem does Git actually solve? How is GitHub different from Git itself?]
+Git is a version control system. Basically, a traditional save-system in most programs
+only saves the latest version, and you can't take back those changes, unless you want to
+"Save As" into entirely new files.
+Whereas Git allows you to see every single save you have, and you can roll it back
+to a specific version at your request. And unlike Save As, it only saves the changes
+and doesn't create new files.
+
+Not to be confused with GitHub, which is a website which uses Git for collaborative purposes
+by storing those files into online repositories.
 
 ---
 
