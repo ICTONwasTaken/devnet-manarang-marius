@@ -7,9 +7,13 @@ movies = []
 
 
 def display_menu():
-    # print the menu
-    # return the user's choice
-    pass
+    print("=== Movie Collection Manager ===")
+    print("1. Add a movie")
+    print("2. View all movies")
+    print("3. Count watched vs unwatched")
+    print("4. Find a movie")
+    print("5. Exit")
+    input("Choose an option:")
 
 
 def add_movie(movie_list):
@@ -41,6 +45,7 @@ def find_movie(movie_list):
 
 
 def main():
+    display_menu()
     # create the main menu loop
     # call the appropriate function based on the user's choice
     pass
