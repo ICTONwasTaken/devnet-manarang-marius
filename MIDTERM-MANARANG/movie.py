@@ -13,7 +13,8 @@ def display_menu():
     print("3. Count watched vs unwatched")
     print("4. Find a movie")
     print("5. Exit")
-    input("Choose an option:")
+    action = int(input("Choose an option: "))
+    return action
 
 
 def add_movie(movie_list):
@@ -45,10 +46,16 @@ def find_movie(movie_list):
 
 
 def main():
-    display_menu()
+    action = 0
+    loop = True
+    
+    while loop == True:
+        action = display_menu()
+        print(action)
+        if action == 5:
+            loop = False
     # create the main menu loop
     # call the appropriate function based on the user's choice
-    pass
 
 
 main()
