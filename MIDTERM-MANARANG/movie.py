@@ -22,6 +22,9 @@ def add_movie(movie_list:list):
     title = input("Movie title: ")
     director = input("Movie director: ")
     status = input("Movie status: ")
+    print("")
+    print(title, "successfully added!")
+    print("")
     # build the movie string
     movie = f"{title} - {director} - {status}"
     # add it to the list
@@ -31,8 +34,14 @@ def add_movie(movie_list:list):
 
 def view_movies(movie_list):
     # loop through and print every movie
+    print("=== All Movies ===")
+    if movie_list:
+        for movie in movie_list:
+            print(movie)
     # handle empty list
-    pass
+    elif not movie_list:
+            print("No movies here!")
+    print("")
 
 
 def count_watched_unwatched(movie_list):
@@ -57,7 +66,6 @@ def main():
     
     while loop == True:
         action = display_menu()
-        print(action)
         if action == 1:
             movies = add_movie(movies)
         if action == 2:
