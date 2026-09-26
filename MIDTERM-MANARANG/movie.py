@@ -3,7 +3,7 @@ Midterm Practical Exam — Movie Collection Manager
 Student: [your name]
 """
 
-movies = []
+movies = ["something - something - Watched","something - something - Unwatched"]
 
 
 def display_menu():
@@ -46,9 +46,30 @@ def view_movies(movie_list):
 
 def count_watched_unwatched(movie_list):
     # loop through the list
+    wa = []
+    un = []
+    w_count = 0
+    u_count = 0
+
+    for movie in movie_list:
+        movie = movie.lower()
+        
+        if " watched" in movie:
+            wa.append(movie)
+        if " unwatched" in movie:
+            un.append(movie)
     # count Watched vs Unwatched
+    print("=== Watched Movies ===")
+    for w in wa:
+        w_count += 1
+        print(w)
+    print("")
+    print("=== Unwatched Movies ===")
+    for u in un:
+            u_count += 1
+            print(u)
     # return both counts
-    pass
+    return w_count, u_count
 
 
 def find_movie(movie_list):
@@ -70,6 +91,12 @@ def main():
             movies = add_movie(movies)
         if action == 2:
             view_movies(movies)
+        if action == 3:
+            w, u = count_watched_unwatched(movies)
+            print("")
+            print("Watched Movies: ", w)
+            print("Unatched Movies: ", u)
+            print("")
         if action == 5:
             loop = False
     # create the main menu loop
