@@ -3,7 +3,7 @@ Midterm Practical Exam — Movie Collection Manager
 Student: [your name]
 """
 
-movies = ["something - something - Watched","something - something - Unwatched"]
+movies = ["something - something - Watched"]
 
 
 def display_menu():
@@ -53,7 +53,7 @@ def count_watched_unwatched(movie_list):
 
     for movie in movie_list:
         movie = movie.lower()
-        
+
         if " watched" in movie:
             wa.append(movie)
         if " unwatched" in movie:
@@ -73,11 +73,27 @@ def count_watched_unwatched(movie_list):
 
 
 def find_movie(movie_list):
+    found_list = []
     # ask for a movie title
+    thingy = input("Search for Movie Title: ")
+    print("")
+
     # search the list
     # search should be case-insensitive
+    for movie in movie_list:
+        found = movie.find(thingy)
+        if found > -1:
+            found_list.append(movie)
+        else:
+            continue
     # print the result or "Movie not found."
-    pass
+    if found_list:
+        print("Movie found:")
+        for movie in found_list:
+            print(movie)
+    else:
+         print("Movie not found...")
+    print("")
 
 
 def main():
@@ -87,6 +103,7 @@ def main():
     
     while loop == True:
         action = display_menu()
+        print("")
         if action == 1:
             movies = add_movie(movies)
         if action == 2:
@@ -97,6 +114,8 @@ def main():
             print("Watched Movies: ", w)
             print("Unatched Movies: ", u)
             print("")
+        if action == 4:
+            find_movie(movies)
         if action == 5:
             loop = False
     # create the main menu loop
