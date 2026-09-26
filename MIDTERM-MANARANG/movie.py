@@ -17,11 +17,16 @@ def display_menu():
     return action
 
 
-def add_movie(movie_list):
+def add_movie(movie_list:list):
     # ask for title, director, and status
+    title = input("Movie title: ")
+    director = input("Movie director: ")
+    status = input("Movie status: ")
     # build the movie string
+    movie = f"{title} - {director} - {status}"
     # add it to the list
-    pass
+    movie_list.append(movie)
+    return movie_list
 
 
 def view_movies(movie_list):
@@ -46,12 +51,17 @@ def find_movie(movie_list):
 
 
 def main():
+    global movies
     action = 0
     loop = True
     
     while loop == True:
         action = display_menu()
         print(action)
+        if action == 1:
+            movies = add_movie(movies)
+        if action == 2:
+            view_movies(movies)
         if action == 5:
             loop = False
     # create the main menu loop
