@@ -1,6 +1,6 @@
 """
 Midterm Practical Exam — Movie Collection Manager
-Student: [your name]
+Student: Manarang, Marius L.
 """
 
 movies = ["something - something - Watched"]
@@ -12,7 +12,8 @@ def display_menu():
     print("2. View all movies")
     print("3. Count watched vs unwatched")
     print("4. Find a movie")
-    print("5. Exit")
+    print("5. Remove a movie")
+    print("6. Exit")
     action = int(input("Choose an option: "))
     return action
 
@@ -95,15 +96,36 @@ def find_movie(movie_list):
          print("Movie not found...")
     print("")
 
+def remove_movie(movie_list):
+    # ask for a movie title
+    thingy = input("Movie Title to remove: ")
+    print("")
+
+    for movie in movie_list:
+        found = movie.find(thingy)
+
+        if found > -1:
+            movie_list.remove(movie)
+
+        if found >= 0:
+            print("Movie successfully deleted")
+        else:
+            print("Movie not found...")
+
+    return movie_list
+
+
 
 def main():
     global movies
     action = 0
     loop = True
-    
+    # create the main menu loop
+
     while loop == True:
         action = display_menu()
         print("")
+        # call the appropriate function based on the user's choice
         if action == 1:
             movies = add_movie(movies)
         if action == 2:
@@ -117,9 +139,10 @@ def main():
         if action == 4:
             find_movie(movies)
         if action == 5:
+            movies = remove_movie(movies)
+            print("")
+        if action == 6:
             loop = False
-    # create the main menu loop
-    # call the appropriate function based on the user's choice
 
 
 main()
